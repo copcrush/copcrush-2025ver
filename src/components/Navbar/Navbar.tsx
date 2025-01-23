@@ -1,160 +1,100 @@
-"use client"
+"use client";
 
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-
-const pages = ['Home', 'About', 'Blog', 'Project', 'Contact'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+import Link from "next/link";
+import React, { useState } from "react";
 
 const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  const [currentContent, setCurrentContent] = useState<number>(0);
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
+  const handleShowMenu = () => {
+    setCurrentContent((prev) => prev + 1);
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            Copcrush
-          </Typography>
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{ display: { xs: 'block', md: 'none' } }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            LOGO
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+    <>
+      <div className="p-4">
+        <nav className="w-full h-screen nes-container with-title is-centered">
+          <p className="title bg-green-200 p-2">Welcome to Copcrush Universe</p>
+          <div className="flex flex-col justify-center items-center">
+            <p className="px-4 py-6 text-xs md:text-sm lg:text-lg xl:text-xl">
+              Hey there, Player 1! You've entered my 8-bit world – where
+              creativity meets code. Get ready to explore a portfolio that’s
+              more than just a showcase… it’s an adventure! Start Your Quest
+              Press [Start] to explore my skills, projects, and passions. Every
+              page is a level, and every click takes you closer to the final
+              boss… me!
+            </p>
+            {currentContent === 0 && (
+              <button
+                type="button"
+                className="nes-btn is-primary"
+                onClick={handleShowMenu}
               >
-                {page}
-              </Button>
-            ))}
-          </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+                Start!
+              </button>
+            )}
+            {currentContent === 1 && (
+              <div className="py-4 text-xs md:text-sm lg:text-lg xl:text-xl">
+                <p>Welcome, brave adventurer!</p>
+                <p>I'm Navaphan Singkaew</p>
+                <p>you can call me "Copcrush"</p>
+                <p>Your guide in this pixelated journey.</p>
+                <div className="flex flex-col justify-center items-center my-4">
+                  <i className="nes-octocat animate"></i>
+                </div>
+                
+                <button
+                  type="button"
+                  className="nes-btn is-success"
+                  onClick={handleShowMenu}
+                >
+                  Start your journey
+                </button>
+              </div>
+            )}
+            {currentContent === 2 && (
+              <div className="py-4 text-xs md:text-sm lg:text-lg xl:text-xl">
+                <p>
+                  As a Full Stack Developer, I combine creativity and technology
+                  to build experiences that captivate and inspire.
+                </p>
+                <p>
+                  From coding dynamic web apps to crafting seamless user
+                  interfaces, I turn ideas into reality, one line of code at a
+                  time.
+                </p>
+                <p>
+                  Get ready to uncover my skills and projects as we level up
+                  together. Let's dive in!
+                </p>
+                <button
+                  type="button"
+                  className="nes-btn is-warning"
+                  onClick={handleShowMenu}
+                >
+                  Next Level
+                </button>
+              </div>
+            )}
+            {currentContent === 3 && (
+              <div className="py-4 text-xs md:text-sm lg:text-lg xl:text-xl">
+                <p>Skills and tools I use:</p>
+                <p>React</p>
+                <p>Node.js</p>
+                <p>TypeScript</p>
+                <button
+                  type="button"
+                  className="nes-btn is-error"
+                  onClick={handleShowMenu}
+                >
+                  Finish
+                </button>
+              </div>
+            )}
+          </div>
+        </nav>
+      </div>
+    </>
   );
-}
+};
 export default Navbar;
-
