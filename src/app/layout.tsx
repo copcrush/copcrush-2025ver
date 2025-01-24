@@ -3,9 +3,9 @@ import { Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import "nes.css/css/nes.min.css";
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 
-const pressStart2P = Press_Start_2P({ weight: "400", subsets: ["latin"] })
-
+const pressStart2P = Press_Start_2P({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Copcrush 2025 Ver",
@@ -14,16 +14,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
-      <body
-        className={pressStart2P.className}
-      >
+      <body className={pressStart2P.className}>
         <Navbar />
-        {children}
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
