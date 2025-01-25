@@ -23,39 +23,36 @@ const WelcomePage = () => {
       }}
     >
       <nav className="w-full max-w-4xl bg-white shadow-lg text-center text-gray-800 border-black border-4">
-        <div className="flex justify-between items-center text-center bg-blue-600 text-white px-3 py-1 border-b-[5px] border-black">
-          <div className="flex gap-3">
+        <div className="flex justify-between items-center text-center bg-blue-600 text-white px-3 py-2 border-b-[5px] border-black">
+          <div className="flex gap-3 items-center">
             <i className="snes-jp-logo"></i>
-            <p className="font-semibold text-center my-3 ">Copcrush.exe</p>
+            <p className="font-semibold text-center text-base md:text-lg">
+              Copcrush.exe
+            </p>
           </div>
 
-          <div className="bg-red-500 px-2 py-1 my-2 border-red-700 border-4">
+          <div className="bg-red-500 px-2 py-1 border-red-700 border-4">
             <i className="nes-icon close is-small text-white"></i>
           </div>
         </div>
 
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center items-center p-4">
           {/* Content Blocks */}
           {currentContent === 0 && (
-            <div className="transition-opacity duration-500 p-4">
+            <div className="transition-opacity duration-500 p-4 text-center max-w-lg">
               <div className="flex justify-center items-center gap-2 my-4">
                 <i className="nes-icon coin is-medium"></i>
-                <p className="text-xl font-bold p-4 text-center">
+                <p className="text-lg md:text-xl font-bold p-4 text-center">
                   Welcome to Copcrush Universe
                 </p>
                 <i className="nes-icon coin is-medium"></i>
               </div>
-              <p className="px-4 py-6 text-sm md:text-lg">
-                Hey there, Player 1! You've entered my 8-bit world
+              <p className="px-4 py-2 text-sm md:text-base">
+                Hey there, Player 1! You've entered my 8-bit world where
+                creativity meets code. Get ready to explore a portfolio that’s
+                more than just a showcase… it’s an adventure!
               </p>
-              <div>
-                <p>You've entered my 8-bit world</p>
-                <p>
-                  where creativity meets code. Get ready to explore a portfolio
-                </p>
-                <p>that’s more than just a showcase… it’s an adventure!</p>
-              </div>
-              <p>Press [Start] to begin the journey.</p>
+              <p className="mt-2">Press [Start] to begin the journey.</p>
               <button
                 type="button"
                 className="nes-btn is-primary mt-4"
@@ -66,11 +63,12 @@ const WelcomePage = () => {
             </div>
           )}
 
-          {/* Content 1 */}
+          {/* Content Blocks for subsequent screens */}
           {currentContent === 1 && (
-            <div className="transition-opacity duration-500 p-4">
-              <p className="text-lg mb-4">Welcome, brave adventurer!</p>
-
+            <div className="transition-opacity duration-500 p-4 text-center max-w-lg">
+              <p className="text-lg md:text-xl font-bold mb-4">
+                Welcome, brave adventurer!
+              </p>
               <p>I'm Navaphan Singkaew</p>
               <p>You can call me "Copcrush"</p>
               <p>Your guide in this pixelated journey.</p>
@@ -87,10 +85,12 @@ const WelcomePage = () => {
             </div>
           )}
 
-          {/* Content 2 */}
+          {/* Other content sections */}
           {currentContent === 2 && (
-            <div className="transition-opacity duration-500 p-4">
-              <p className="text-lg mb-4">As a Full Stack Developer...</p>
+            <div className="transition-opacity duration-500 p-4 text-center max-w-lg">
+              <p className="text-lg md:text-xl mb-4">
+                As a Full Stack Developer...
+              </p>
               <p>
                 I combine creativity and technology to build experiences that
                 captivate and inspire.
@@ -109,11 +109,11 @@ const WelcomePage = () => {
             </div>
           )}
 
-          {/* Content 3 */}
+          {/* Skills Table */}
           {currentContent === 3 && (
-            <div className="transition-opacity duration-500 p-4">
-              <p className="text-lg mb-4">Skills</p>
-              <table className="nes-table is-bordered is-centered">
+            <div className="transition-opacity duration-500 p-4 text-center max-w-lg">
+              <p className="text-lg md:text-xl mb-4">Skills</p>
+              <table className="nes-table is-bordered is-centered text-xs md:text-sm">
                 <thead>
                   <tr>
                     <th>Skills</th>
@@ -153,10 +153,12 @@ const WelcomePage = () => {
             </div>
           )}
 
-          {/* Content 4 */}
+          {/* Final Screen */}
           {currentContent === 4 && (
-            <div className="transition-opacity duration-500 p-4">
-              <p className="text-lg mb-4">You've completed all levels!</p>
+            <div className="transition-opacity duration-500 p-4 text-center max-w-lg">
+              <p className="text-lg md:text-xl mb-4">
+                You've completed all levels!
+              </p>
               <p>If you need more information, feel free to reach out.</p>
               <button
                 type="button"
