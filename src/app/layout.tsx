@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CacheProvider } from "@emotion/react";
 import { Press_Start_2P } from "next/font/google";
 import "./globals.css";
 import "nes.css/css/nes.min.css";
@@ -20,9 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={pressStart2P.className}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+
       </body>
     </html>
   );
