@@ -46,8 +46,42 @@ const AboutPage = () => {
             </div>
           </section>
         );
-      case 2:
-        return <p>Here is the Skills section content.</p>;
+        case 2:
+          return (
+            <section className="flex flex-col gap-6">
+              <div>
+                <h2 className="text-xl font-bold mb-2">Frontend</h2>
+                <p className="text-sm leading-6">
+                  HTML, CSS, JavaScript, TypeScript, Tailwind CSS, React.js, Next.js, Ant-design, Material UI, Bootstrap
+                </p>
+              </div>
+              <div>
+                <h2 className="text-xl font-bold mb-2">Backend</h2>
+                <p className="text-sm leading-6">
+                  Node.js, Express.js, Restful API, Postman, NPM
+                </p>
+              </div>
+              <div>
+                <h2 className="text-xl font-bold mb-2">Database</h2>
+                <p className="text-sm leading-6">
+                  MySQL, PostgreSQL, MongoDB
+                </p>
+              </div>
+              <div>
+                <h2 className="text-xl font-bold mb-2">Version Control</h2>
+                <p className="text-sm leading-6">Git</p>
+              </div>
+              <div>
+                <h2 className="text-xl font-bold mb-2">Repository</h2>
+                <p className="text-sm leading-6">GitHub, BitBucket</p>
+              </div>
+              <div>
+                <h2 className="text-xl font-bold mb-2">Others</h2>
+                <p className="text-sm leading-6">JIRA, Figma</p>
+              </div>
+            </section>
+          );
+        
       case 3:
         return <p>Here is the Experience section content.</p>;
       case 4:
